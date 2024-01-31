@@ -45,8 +45,6 @@ def read_data (db_name, table_name):
     cur.close()
     return records
 
-
-
 if __name__ == '__main__':
     currentDateTime = datetime.now().timestamp()
 
@@ -55,7 +53,7 @@ if __name__ == '__main__':
         time_stamp = datetime.fromtimestamp (data[3])
         print(f"Id: {data[0]} Scale: {data[1]} Note: {data[2]} at {time_stamp:%d-%m-%Y %-I:%M:%S}")
 
-    write_data ("Notions", "ideas", 2, "What if she calls me.", currentDateTime)
+    #write_data ("Thoughts", "ideas", 10, "over by the fence", currentDateTime)
     
     #proper end of python
     sys.exit(1)
