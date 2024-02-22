@@ -1,0 +1,184 @@
+[
+  {
+    "nodes" : [
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{21, 301}, {80, 32}}",
+        "class" : "Button",
+        "attributes" : {
+          "flex" : "LRTB",
+          "action" : "button_save",
+          "frame" : "{{80, 104}, {80, 32}}",
+          "title" : "save",
+          "uuid" : "E83C6453-65E1-4FED-854B-C8A3D628CEB1",
+          "class" : "Button",
+          "name" : "buttons",
+          "font_size" : 15
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 85}, {292, 34}}",
+        "class" : "Slider",
+        "attributes" : {
+          "action" : "slider_action",
+          "flex" : "W",
+          "frame" : "{{20, 103}, {200, 34}}",
+          "uuid" : "BD6E382C-4FC4-49E3-B18D-D2579E1C6E53",
+          "class" : "Slider",
+          "value" : 0.5,
+          "name" : "slider1"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{54, 6}, {150, 32}}",
+        "class" : "Label",
+        "attributes" : {
+          "name" : "label2",
+          "text_color" : "RGBA(0.151515,0.151515,1.000000,1.000000)",
+          "frame" : "{{45, 104}, {150, 32}}",
+          "uuid" : "1436374A-5BC3-4A4E-AA93-8CB7BFA4F577",
+          "class" : "Label",
+          "alignment" : "center",
+          "text" : "Thoughts",
+          "font_size" : 18,
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 53}, {78, 32}}",
+        "class" : "Label",
+        "attributes" : {
+          "font_size" : 18,
+          "frame" : "{{45, 104}, {150, 32}}",
+          "uuid" : "51C0E622-E628-4968-9472-50A6D53E45D3",
+          "class" : "Label",
+          "alignment" : "center",
+          "text" : "scale",
+          "name" : "label3",
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{212, 301}, {80, 32}}",
+        "class" : "Button",
+        "attributes" : {
+          "flex" : "LRTB",
+          "action" : "button_cancel",
+          "frame" : "{{80, 104}, {80, 32}}",
+          "title" : "cancel",
+          "uuid" : "E83C6453-65E1-4FED-854B-C8A3D628CEB1",
+          "class" : "Button",
+          "name" : "buttonc",
+          "font_size" : 15
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{21, 135}, {272, 137}}",
+        "class" : "TextField",
+        "attributes" : {
+          "uuid" : "4177A198-4593-4EED-84A6-E76845481955",
+          "flex" : "",
+          "corner_radius" : 0,
+          "frame" : "{{21, 168}, {200, 32}}",
+          "border_color" : "RGBA(0.372294,0.121212,1.000000,1.000000)",
+          "border_width" : 1,
+          "alignment" : "left",
+          "autocorrection_type" : "yes",
+          "action" : "textfield_action",
+          "placeholder" : "details",
+          "font_name" : "<System>",
+          "spellchecking_type" : "yes",
+          "class" : "TextField",
+          "name" : "textfield1",
+          "font_size" : 17
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{119, 301}, {80, 32}}",
+        "class" : "Button",
+        "attributes" : {
+          "flex" : "LRTB",
+          "action" : "button_read",
+          "frame" : "{{80, 104}, {80, 32}}",
+          "title" : "read",
+          "uuid" : "E83C6453-65E1-4FED-854B-C8A3D628CEB1",
+          "class" : "Button",
+          "name" : "buttonr",
+          "font_size" : 15
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{80, 53}, {150, 32}}",
+        "class" : "Label",
+        "attributes" : {
+          "alpha" : 1,
+          "name" : "label1",
+          "frame" : "{{45, 104}, {150, 32}}",
+          "uuid" : "FF5F398A-DA8C-4139-BA38-FCCA42172E6D",
+          "class" : "Label",
+          "alignment" : "center",
+          "text" : "3",
+          "font_size" : 18,
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{21, 347}, {271, 215}}",
+        "class" : "ScrollView",
+        "attributes" : {
+          "uuid" : "489D8007-3C26-429D-9C3C-BBE79FFC1FE7",
+          "frame" : "{{-6, 128}, {320, 320}}",
+          "content_height" : 320,
+          "class" : "ScrollView",
+          "name" : "scrollview1",
+          "content_width" : 320
+        },
+        "selected" : true
+      }
+    ],
+    "frame" : "{{0, 0}, {308, 575}}",
+    "class" : "View",
+    "attributes" : {
+      "enabled" : true,
+      "background_color" : "RGBA(0.878788,0.948052,1.000000,1.000000)",
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "flex" : ""
+    },
+    "selected" : false
+  }
+]
