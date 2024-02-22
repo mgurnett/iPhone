@@ -161,7 +161,7 @@ def journal_output (print_quest):
     total_scale = 0
     num_of_days = 0
     graph_list = []
-    for accounting in  total_acounting:
+    for accounting in  total_acounting: 
         # print (f'{accounting = } \n\n')
         num_of_days += 1
         totals = accounting.get ('totals')
