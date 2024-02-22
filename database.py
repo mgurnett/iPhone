@@ -176,6 +176,38 @@ def journal (db_name, table_name, **kwargs):
 
     return account
 
+def journal_output (print_quest):
+    total_acounting = journal (DATABASE_NAME, DATABASE_TABLE,)
+    total_entry_number = 0
+    total_scale = 0
+    num_of_days = 0
+    graph_list = []
+    for accounting in  total_acounting:
+        # print (f'{accounting = } \n\n')
+        num_of_days += 1
+        totals = accounting.get ('totals')
+        report_date = totals.get('day')
+        date_totals = totals.get('total')
+        graph_daily = {}
+        print (f'For the date of {report_date}') if print_quest else print ()
+        notes = accounting.get ('notes')
+        num_of_entry = 0
+        daily_scale = 0
+        for note in notes:
+            num_of_entry += 1
+            note_string = note.get('note')
+            scale = note.get('scale')
+            print (f'scale/score is {scale} - {note_string}') if print_quest else print ()
+            daily_scale = daily_scale + scale
+        total_entry_number = total_entry_number + num_of_entry
+        total_scale = total_scale + daily_scale
+        graph_daily = {'date': report_date, 'scale': daily_scale, 'entries': num_of_entry}
+        print (f'Total scale/score of {date_totals} on {num_of_entry} entries \n\n') if print_quest else print ()
+        graph_list.append(graph_daily)
+    print (f'Total number of enteries {total_entry_number} and a total scale of {total_scale}')
+    print (f'meaning a daily average scale of {total_scale / num_of_days:.1f} on {total_entry_number / num_of_days:.1f} entries per day.')
+    return graph_list
+
 
 if __name__ == '__main__':
     DATABASE_NAME = '/home/michael/Desktop/iPhone/Thoughts'
@@ -194,46 +226,14 @@ if __name__ == '__main__':
     # print (tally_data (DATABASE_NAME, DATABASE_TABLE, output ='list'))
     # print (day_num_convert(39))  # test for day_num_convert
 
-    total_acounting = journal (DATABASE_NAME, DATABASE_TABLE,)
-    total_entry_number = 0
-    total_scale = 0
-    num_of_days = 0
-    graph_list = []
-    for accounting in  total_acounting:
-        # print (f'{accounting = } \n\n')
-        num_of_days += 1
-        totals = accounting.get ('totals')
-        report_date = totals.get('day')
-        date_totals = totals.get('total')
-        graph_daily = {}
-        # print (f'For the date of {report_date}')
-        notes = accounting.get ('notes')
-        num_of_entry = 0
-        daily_scale = 0
-        for note in notes:
-            num_of_entry += 1
-            note_string = note.get('note')
-            scale = note.get('scale')
-            # print (f'scale/score is {scale} - {note_string}')
-            daily_scale = daily_scale + scale
-        total_entry_number = total_entry_number + num_of_entry
-        total_scale = total_scale + daily_scale
-        graph_daily = {'date': report_date, 'scale': daily_scale, 'entries': num_of_entry}
-        # print (f'Total scale/score of {date_totals} on {num_of_entry} entries \n\n')
-        graph_list.append(graph_daily)
-    print (f'Total number of enteries {total_entry_number} and a total scale of {total_scale}')
-    print (f'meaning a daily average scale of {total_scale / num_of_days:.1f} on {total_entry_number / num_of_days:.1f} entries per day.')
+    graph_list = journal_output(False)
 
-    #proper end of python
-
-    # print (f'{graph_list = }')
-    # array = np.array(graph_list)
-    # print (array)
     df = pd.DataFrame(graph_list)
-    # print (df['date'], [df['scale'], df['entries']])
-    df['scale_average'] = df.rolling(5).mean()
-    df.plot('date', ['scale', 'entries'] )
+    df['scale_average'] = df['scale'].rolling(window=5).mean()
+    df['entries_average'] = df['entries'].rolling(window=5).mean()
+    df.plot('date', ['scale', 'scale_average'] )
+    df.plot('date', ['entries', 'entries_average'] )
     plt.show()
 
-
+    #proper end of python
     sys.exit()
