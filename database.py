@@ -233,6 +233,7 @@ if __name__ == '__main__':
     df['entries_average'] = df['entries'].rolling(window=5).mean()
     df.plot('date', ['scale', 'scale_average'] )
     df.plot('date', ['entries', 'entries_average'] )
+    df.plot('date', ['scale_average', 'entries_average'] )
     plt.show()
 
     #proper end of python
